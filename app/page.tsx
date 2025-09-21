@@ -1,16 +1,22 @@
-export default function Home() {
+import { Fragment } from 'react';
+import Link from 'next/link';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">
-            Should see this in vercel
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            A modern marketing website: i want a website about making websites
-          </p>
+    <Fragment>
+      <Header />
+      <div className="container mx-auto px-4">
+        <div className="mt-8">
+          <h1 className="text-4xl font-bold">Welcome to Webcraft</h1>
+          <p className="mt-4 text-lg">Learn how to create stunning websites with modern technologies.</p>
+          <div className="mt-8">
+            <Link href="/learn"><a className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Start Learning</a></Link>
+          </div>
         </div>
       </div>
-    </main>
-  )
+      <Footer />
+    </Fragment>
+  );
 }
